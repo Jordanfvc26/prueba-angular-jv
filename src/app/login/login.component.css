@@ -1,0 +1,19 @@
+.titulo{
+    text-align: center;
+}
+
+.btn-iniciar{
+    text-align: center;
+}
+
+.btn-iniciar button{
+    width: 100%;
+}
+
+input.ng-invalid.ng-touched{
+    border:solid 2px rgba(252, 38, 38, 0.747);
+}
+
+input.ng-valid{
+    border:solid 2px green;
+}

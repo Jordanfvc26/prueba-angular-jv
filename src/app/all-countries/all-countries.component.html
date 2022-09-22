@@ -1,0 +1,52 @@
+<div id="spinner" class="d-flex justify-content-center" *ngIf="!estado">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <form class="d-flex">
+            <input class="form-control me-1" type="search" placeholder="Buscar un país..." aria-label="Search">
+            <button class="btn btn-primary me-4" type="submit">Buscar</button>
+        </form>
+
+        <!--Para ver los favoritos-->
+        <div class="contenedor-favoritos me-5">
+            <button (click)="paisesFavoritos()" class="btn-favoritos btn btn-secondary">Países favoritos</button>
+        </div>
+
+        <!--Para cerrar la sesión-->
+        <div class="contenedor-salir">
+            <button (click)="cerrarSesion()" class="btn-cerrar-sesion btn btn-danger">Cerrar sesión</button>
+        </div>
+    </div>
+</nav>
+
+
+
+<body>
+    <div class="titulo">
+        <h1>Lista de todos los países del mundo</h1>
+    </div>
+    <table class="table caption-top">
+        
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">País</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pais of paises">
+            <th scope="row">1</th>
+            <td>{{pais.name}}</td>
+            <td>{{pais.capital}}</td>
+            <td><button class="btn-cerrar-sesion btn btn-success"> Agregar favoritos</button></td>
+          </tr>
+        </tbody>
+      </table>
+</body>

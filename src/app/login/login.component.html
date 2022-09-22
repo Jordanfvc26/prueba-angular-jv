@@ -1,0 +1,40 @@
+<body class="m-0 vh-100 row justify-content-center align-items-center"> 
+    <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion(loginForm.value, checkbox.checked)" class="col-4 row g-3 needs-validation" errorTailor>
+
+        <div class="titulo">
+            <h1><b>Inicio de sesión</b></h1>
+            <img class="img-login" width="80px" src="https://cdn-icons-png.flaticon.com/512/1180/1180356.png">
+        </div>
+
+        <div class="row-mt-4">
+            <label for="validationCustom01" class="form-label">Correo electrónico:</label>
+            <input formControlName="email" type="text" class="form-control" placeholder="usuario@gmail.com" required>
+        </div>
+
+        <div class="row-mt-4">
+            <label for="validationCustom01" class="form-label">Contraseña:</label>
+            <input formControlName="password" type="password" class="form-control" placeholder="password" required>
+        </div>
+
+        <div class="col-12">
+            <div class="form-check">
+                <input #checkbox class="form-check-input" type="checkbox" required>
+                <label class="form-check-label">
+                    Acepto los términos y condiciones
+                </label>
+            </div>
+        </div>
+        
+        <div class="btn-iniciar">
+            <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+        </div>
+    </form>
+</body>
+
+
+<!--<ng-template let-error let-text="text" #errorPassword>
+    <p>Faltan caracteres </p>
+    <div *ngIf="error?.minlenght">
+        <p> Se requiere mínimo 12</p>
+    </div>
+</ng-template>-->
