@@ -11,13 +11,15 @@ import { FavoriteCountriesComponent } from './favorite-countries/favorite-countr
 
 import { ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 import { ErrorTailorModule } from '@ngneat/error-tailor';
+import { BuscarPaisesPipe } from './pipes/buscar-paises.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AllCountriesComponent,
-    FavoriteCountriesComponent
+    FavoriteCountriesComponent,
+    BuscarPaisesPipe
   ],
   imports: [
     BrowserModule,

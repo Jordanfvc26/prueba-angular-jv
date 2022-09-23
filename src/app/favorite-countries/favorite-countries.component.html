@@ -1,40 +1,50 @@
 <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <form class="d-flex">
-            <input class="form-control me-1" type="search" placeholder="Buscar un país..." aria-label="Search">
-            <button class="btn btn-primary me-4" type="submit">Buscar</button>
-        </form>
+  <div class="container-fluid">
 
-        <!--Para cerrar la sesión-->
-        <div class="contenedor-salir">
-            <button (click)="cerrarSesion()" class="btn-cerrar-sesion btn btn-danger">Cerrar sesión</button>
-        </div>
+    <!--Parar volver al listado de los países favoritos-->
+    <div class="contenedor-favoritos me-5">
+      <button routerLink="/all-countries" class="btn-favoritos btn btn-secondary">Volver</button>
     </div>
+
+    <!--Parar buscar país favorito-->
+    <form class="d-flex">
+      <input class="form-control me-1" type="text" placeholder="Buscar un país...">
+      <button class="btn btn-primary me-4" type="submit">Buscar</button>
+    </form>
+
+    <!--Para cerrar la sesión-->
+    <div class="contenedor-salir">
+      <button (click)="cerrarSesion()" class="btn-cerrar-sesion btn btn-danger">Cerrar sesión</button>
+    </div>
+  </div>
 </nav>
 
-<body>
-    <body>
-        <div class="titulo">
-            <h1>Lista de sus paises favoritos</h1>
-        </div>
-        <table class="table caption-top">
-            
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">País</th>
-                <th scope="col">Capital</th>
-                <th scope="col">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Ecuador</td>
-                <td>Quito</td>
-                <td><button class="btn-cerrar-sesion btn btn-success"> Eliminar favoritos</button></td>
-              </tr>
-            </tbody>
-          </table>
-    </body>
+<body class="text-center">
+  <div class="titulo text-center">
+    <h1>Lista de sus países favoritos</h1>
+  </div>
+
+  <div class="col-md-8 mx-auto">
+    <table class="table caption-top">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">País</th>
+          <th scope="col">Capital</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paisFavorito of listaPaisesFavoritos; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{paisFavorito.name}}</td>
+          <td>{{paisFavorito.capital}}</td>
+          <td>
+            <button (click)="eliminarPaisFavorito(paisFavorito)" class="btn-cerrar-sesion btn btn-danger">
+              Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
